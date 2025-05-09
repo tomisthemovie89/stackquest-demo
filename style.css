@@ -1,0 +1,11 @@
+body {
+  font-family: monospace;
+  background: #0d0d0d;
+  color: #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* ... rest of CSS ... */
