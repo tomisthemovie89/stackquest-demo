@@ -7,11 +7,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <div>Booting Stack Citadel...</div>
+  </div>
+
+  <div class="container" style="display:none;">
     <h1>The Stack Citadel</h1>
     <div id="story"></div>
     <button id="next-btn">Next</button>
   </div>
+
+  <!-- Audio Elements -->
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/26/audio_9b3f7d1960.mp3?filename=deep-space-ambient-121074.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sfx-correct">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0cb44cd688.mp3?filename=ui-confirmation-alert-98762.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sfx-wrong">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_93602ad492.mp3?filename=ui-error-alert-98768.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sfx-badge">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1a2c54a0f4.mp3?filename=success-1-6297.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
+        document.getElementById('bg-music').volume = 0.3;
+        document.getElementById('bg-music').play();
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
